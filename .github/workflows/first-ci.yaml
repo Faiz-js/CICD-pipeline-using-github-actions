@@ -9,6 +9,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: echo hello
+      - name: echo step1
         run: echo "THE PIPELINE IS WORKING FINE"
+
+    steps:
+      - name: echo step2
+        run: echo "THE PIPELINE ECHO"
 
