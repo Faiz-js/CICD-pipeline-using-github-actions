@@ -12,7 +12,6 @@ jobs:
       - name: echo step1
         run: echo "THE PIPELINE IS WORKING FINE"
 
-    steps:
       - name: echo step2
         run: echo "THE PIPELINE ECHO"
 
