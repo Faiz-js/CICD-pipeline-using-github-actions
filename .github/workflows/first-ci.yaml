@@ -15,5 +15,5 @@ jobs:
           host: ${{ secrets.SSH_IP }}
           username: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_SECRET_KEY }}
-          scripts: |
+          script: |
             git clone git@github.com:Faiz-js/CICD-pipeline-using-github-actions.git
