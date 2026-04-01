@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 jobs:
-  clone repo in VPS:
+  clone-repo-in-VPS:
     runs-on: ubuntu-latest
 
     steps:
