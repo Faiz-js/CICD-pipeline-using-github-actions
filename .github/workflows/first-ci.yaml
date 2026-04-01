@@ -5,13 +5,15 @@ on:
     branches: ["main"]
 
 jobs:
-  echo-job:
+  clone repo in VPS:
     runs-on: ubuntu-latest
 
     steps:
-      - name: echo step1
-        run: echo "THE PIPELINE IS WORKING FINE"
-
-      - name: echo step2
-        run: echo "THE PIPELINE ECHO"
-
+      - name: SSH into the server 
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SSH_IP }}
+          username: ${{ secrets.SSH_HOST }}
+          key: ${{ secrets.SSH_SECRET_KEY }}
+          scripts: |
+            git clone git@github.com:Faiz-js/CICD-pipeline-using-github-actions.git
