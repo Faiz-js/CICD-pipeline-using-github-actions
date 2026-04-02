@@ -5,7 +5,7 @@ on:
     branches: ["main"]
 
 jobs:
-  clone-repo-in-VPS:
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,4 +16,16 @@ jobs:
           username: ${{ secrets.SSH_HOST }}
           key: ${{ secrets.SSH_SECRET_KEY }}
           script: |
-            touch name.js
+            cd ~/CICD-pipeline-using-github-actions
+
+            git pull origin main
+
+            docker stop gh-actions-container || true
+
+            docker rm gh-actions-container || true
+
+            docker rmi gh-actions-image || true
+
+            docker build -t gh-actions-image .
+
+            docker run -d -p 3000:80 --name gh-actions-container gh-actions-image
