@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <section id="center">
-        <h1>Testing out CICD pipeline</h1>
+        <h1>Testing out CICD pipeline for the second time</h1>
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
